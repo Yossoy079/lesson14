@@ -59,7 +59,7 @@ namespace エンジン
 		friend エンティティサービス;
 
 	private:
-		TCHAR *名前_= L"コンポーネント";
+		TCHAR *名前_= "コンポーネント";
 	protected:
 		static システムサービス* システムサービス_;
 		エンティティ& 親_;
@@ -82,7 +82,7 @@ namespace エンジン
 	class スプライトコンポーネント final : public コンポーネント
 	{
 	private:
-		TCHAR* 名前_ = L"スプライトコンポーネント";
+		TCHAR* 名前_ = "スプライトコンポーネント";
 
 		int リソースID_ = RID_EXPLOSION_L;		// スプライトの指定
 		bool 位置は中心？_ = true;
@@ -98,7 +98,7 @@ namespace エンジン
 	class 入力コンポーネント final : public コンポーネント
 	{
 	private:
-		TCHAR* 名前_ = L"入力コンポーネント";
+		TCHAR *名前_ = "入力コンポーネント";
 		入力サービス &入力_;
 	public:
 		入力コンポーネント(エンティティ& 親) : コンポーネント(親)
@@ -113,7 +113,7 @@ namespace エンジン
 	class 弾丸コンポーネント final : public コンポーネント
 	{
 	private:
-		TCHAR* 名前_ = L"弾丸コンポーネント";
+		TCHAR *名前_ = "弾丸コンポーネント";
 		弾丸サービス& 弾丸_;
 	public:
 		弾丸コンポーネント(エンティティ& 親) : コンポーネント(親)
@@ -193,6 +193,8 @@ namespace エンジン
 	public:
 		ザコ１・エンティティ();
 		~ザコ１・エンティティ() {}
+
+		float 半径_; //当たり判定用
 
 		void 更新(float 経過時間) override;
 		void 描画() override;

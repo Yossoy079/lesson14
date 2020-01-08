@@ -10,6 +10,7 @@ namespace エンジン {
 	struct 弾丸データ{
 		float2 位置;
 		float2 速度;
+		float 半径; //当たり判定
 		bool 死んだ;
 	};
 

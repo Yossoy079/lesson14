@@ -7,6 +7,7 @@ namespace エンジン {
 	class エンティティサービス;
 	class 入力サービス;
 	class 弾丸サービス;
+	class 当たり判定サービス; //なにこれ
 	class システムサービス;
 }
 

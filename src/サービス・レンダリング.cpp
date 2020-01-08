@@ -4,7 +4,7 @@
 #include "サービス・レンダリング.h"
 
 /// 設定情報 
-#define ルートパス L"../runtime/"
+#define ルートパス "../runtime/"
 
 namespace エンジン
 {

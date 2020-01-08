@@ -23,9 +23,9 @@ namespace エンジン
 	
 	bool コンポーネント::キャスト可能？(const コンポーネント* インスタンス, const TCHAR* 名前)
 	{
-		if (_tcscmp(L"スプライトコンポーネント", 名前) == 0) { return nullptr != dynamic_cast<const スプライトコンポーネント*>(インスタンス); }
-		if (_tcscmp(L"入力コンポーネント", 名前) == 0) { return nullptr != dynamic_cast<const 入力コンポーネント*>(インスタンス); }
-		if (_tcscmp(L"弾丸コンポーネント", 名前) == 0) { return nullptr != dynamic_cast<const 弾丸コンポーネント*>(インスタンス); }
+		if (_tcscmp("スプライトコンポーネント", 名前) == 0) { return nullptr != dynamic_cast<const スプライトコンポーネント*>(インスタンス); }
+		if (_tcscmp("入力コンポーネント", 名前) == 0) { return nullptr != dynamic_cast<const 入力コンポーネント*>(インスタンス); }
+		if (_tcscmp("弾丸コンポーネント", 名前) == 0) { return nullptr != dynamic_cast<const 弾丸コンポーネント*>(インスタンス); }
 
 		return false;
 	}
@@ -37,9 +37,9 @@ namespace エンジン
 		static 文字列分岐 対応表[] =
 		{
 			// 具象クラスのコンポーネントが追加されたらここにデータを追加
-			{ L"スプライトコンポーネント",   [](エンティティ& 親) { return (コンポーネント*)(new スプライトコンポーネント(親)); } },
-			{ L"入力コンポーネント",         [](エンティティ& 親) { return (コンポーネント*)(new 入力コンポーネント(親)); } },
-			{ L"弾丸コンポーネント",         [](エンティティ& 親) { return (コンポーネント*)(new 弾丸コンポーネント(親)); } },
+			{ "スプライトコンポーネント",   [](エンティティ& 親) { return (コンポーネント*)(new スプライトコンポーネント(親)); } },
+			{ "入力コンポーネント",         [](エンティティ& 親) { return (コンポーネント*)(new 入力コンポーネント(親)); } },
+			{ "弾丸コンポーネント",         [](エンティティ& 親) { return (コンポーネント*)(new 弾丸コンポーネント(親)); } },
 		};
 
 		for(const auto &c : 対応表)
